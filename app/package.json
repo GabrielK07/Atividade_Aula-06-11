@@ -1,0 +1,18 @@
+{
+  "name": "app-static-express",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Servidor Express em JS para páginas estáticas",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/main.js",
+    "dev": "node --watch server/main.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^4.22.3",
+    "npm": "^12.2.2"
+  }
+}

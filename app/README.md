@@ -1,75 +1,72 @@
-# Atividade 1 - App Web com Express
+# Atividade Aula 06-11
 
-Este projeto é um exemplo simples de aplicação web usando **Node.js + Express** para servir páginas HTML estáticas.
+Servidor web feito com Node.js e Express que serve arquivos estáticos da pasta `public`.
 
-O objetivo é ajudar quem está iniciando a entender:
-- como organizar um projeto web em pastas;
-- como criar rotas no backend;
-- como conectar HTML e CSS;
-- como exibir uma página `404` quando a rota não existe.
+## O que você precisa ter instalado
 
-## Tecnologias usadas
-- Node.js
-- Express
-- Dotenv
-- HTML5
-- CSS3
+- [Node.js](https://nodejs.org/) versão 20 ou superior (já inclui o npm)
+- [Git](https://git-scm.com/)
 
-## Estrutura do projeto
-```txt
-app/
-|- server.js
-|- package.json
-|- .env
-|- public/
-|  |- assets/
-|  |  |- css/main.css
-|  |  |- img/
-|  |- pages/
-|     |- index.html
-|     |- login.html
-|     |- cadastro.html
-|     |- 404.html
+Para conferir, rode no terminal:
+
+```bash
+node -v
+npm -v
 ```
 
-## O que cada parte faz
-- `server.js`: inicializa o servidor Express, define as rotas e configura a pasta de arquivos estáticos.
-- `public/assets`: arquivos de apoio da interface (CSS e imagens).
-- `public/pages`: páginas HTML exibidas nas rotas.
-- `.env`: permite definir a porta do servidor (`PORT`).
+## Como rodar o projeto
 
-## Rotas da aplicação
-- `/` -> página inicial (`index.html`)
-- `/login` -> página de login (`login.html`)
-- `/cadastro` -> página de cadastro (`cadastro.html`)
-- qualquer outra rota -> página `404.html`
+**1. Clone o repositório e entre na pasta do projeto:**
 
-## Como executar o projeto
-1. Instale as dependências:
+```bash
+git clone https://github.com/GabrielK07/Atividade_Aula-06-11.git
+cd Atividade_Aula-06-11/app
+```
+
+**2. Instale as dependências:**
+
 ```bash
 npm install
 ```
 
-2. Inicie o servidor:
-```bash
-npm start
+**3. Crie o arquivo `.env`** na pasta `app` com o seguinte conteúdo:
+
+```
+PORT=3001
 ```
 
-3. Abra no navegador:
-```txt
-http://localhost:3001
-```
+Esse arquivo não vem no repositório de propósito, então cada pessoa precisa criá-lo.
 
-Se quiser usar outra porta, altere `PORT` no arquivo `.env`.
+**4. Inicie o servidor:**
 
-## Modo desenvolvimento
-Para rodar com reinício automático ao salvar arquivos:
 ```bash
 npm run dev
 ```
 
-## Observações importantes (para estudo)
-- As páginas de login e cadastro são **exemplos de interface**. Ainda não há validação real de usuário no backend.
-- Os formulários estão prontos visualmente, mas não salvam dados em banco.
-- O foco deste exemplo é aprender estrutura, rotas e organização inicial.
+**5. Abra no navegador:**
 
+http://localhost:3001
+
+## Scripts disponíveis
+
+| Comando | O que faz |
+| --- | --- |
+| `npm run dev` | Inicia o servidor e reinicia sozinho quando você altera um arquivo |
+| `npm start` | Inicia o servidor normalmente |
+
+## Estrutura do projeto
+
+```
+app/
+├── public/        # arquivos estáticos (HTML, CSS, JS do navegador)
+├── server/
+│   └── main.js    # servidor Express
+├── package.json
+└── README.md
+```
+
+## Problemas comuns
+
+- **`Missing script: "dev"`**: você está na pasta errada. Entre na pasta `app`, onde fica o `package.json`.
+- **`Cannot find package ...`**: faltou instalar as dependências. Rode `npm install`.
+- **A porta aparece como `undefined`**: falta criar o arquivo `.env` (passo 3).
